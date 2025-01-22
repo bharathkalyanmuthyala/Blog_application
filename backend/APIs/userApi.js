@@ -63,7 +63,7 @@ userApp.post('/login',expressAsyncHandler(async(req,res)=>{
         }
         else{
             //create json web token
-            const signedToken=jwt.sign({username:dbUser.username},process.env.SECRET_KEY,{expiresIn:'1d'});
+            const signedToken=jwt.sign({username:dbUser.username},"abcdef",{expiresIn:'1d'});
             //send the response
             res.send({message:"login success",token:signedToken,user:dbUser});
 

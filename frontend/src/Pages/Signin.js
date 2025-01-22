@@ -44,7 +44,7 @@ function Signin() {
             </div>
             <div className='m-3'>
                 <label htmlFor='password' className='form-label'>Password</label>
-                <input className='form-control' id='password' placeholder='Enter Password' {...register('password',{required:true})}/>
+                <input className='form-control' id='password' placeholder='Enter Password' type='password' autoComplete='off'{...register('password',{required:true})}/>
             </div>
             <button type='submit' className='btn btn-warning d-block mx-auto'>Login</button>
         </form>

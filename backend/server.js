@@ -2,7 +2,7 @@ const exp=require('express')
 const app=exp();
 const path=require('path');
 require('dotenv').config();
-const port=process.env.PORT;
+const port=4000;
 //import the APIs into server.js
 const userApp=require('../backend/APIs/userApi.js');
 const authorApp=require('../backend/APIs/authorApi.js');
@@ -24,7 +24,7 @@ app.use((req,res,next)=>{
 //importing mongoclient
 const mongoclient=require('mongodb').MongoClient;
 //Making connection to the database
-mongoclient.connect(process.env.MONGO_URL)
+mongoclient.connect('mongodb://127.0.0.1:27017')
 .then(client=>{
     //get database obj
     const blogg=client.db('blogg');

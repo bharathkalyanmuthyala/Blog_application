@@ -11,7 +11,7 @@ function verifyToken(req,res,next){
         const token=bearerToken.split(' ')[1];
         //verify the token
         try{
-            jwt.verify(token,process.env.SECRET_KEY);
+            jwt.verify(token,"abcdef");
             next();
         }
         catch(err){
